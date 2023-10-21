@@ -20,7 +20,7 @@ public class UserController {
     public ResponseEntity create(@RequestBody UserModel userModel){
         var user = this.userRepository.findByUsername(userModel.getUsername());
         if(user != null){
-           System.out.println("Usuário já Existe!");
+           System.out.println("Usuário já Existe! Digite um Usuário que não foi Cadastrado!");
            //Mensagem de Erro e StatusCode
            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário já Existe!");
         }
